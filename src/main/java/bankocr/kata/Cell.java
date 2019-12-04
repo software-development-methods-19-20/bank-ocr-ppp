@@ -27,7 +27,7 @@ public class Cell {
                     "|_ " +
                     "|_|";
 
-    private static final String[] NUM_CELL = new String[10];
+    private static final String[] NUM_CELL = new String[10]{ZERO_CELL};
 
     private String cellAsText;
 
