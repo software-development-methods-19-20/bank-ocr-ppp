@@ -37,12 +37,12 @@ public class Cell {
 
     private static final String FOUR =
                     "   " +
-                    "|_| " +
+                    "|_|" +
                     "  |";
 
     private static final String THREE =
                     " _ " +
-                    " _| " +
+                    " _|" +
                     " _|";
 
     private static final String TWO =
