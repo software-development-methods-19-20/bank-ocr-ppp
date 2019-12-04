@@ -26,4 +26,14 @@ public class BankOcrAcceptanceTest {
 
         application.showsAccountNumber("111111111\n");
     }
+
+    @Test
+    public void parseFileWithAllNumsEntryAndShowActualAccountNumerOnConsole() throws Exception {
+        URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOneToNineDigitEntry");
+        ApplicationRunner application = new ApplicationRunner();
+
+        application.parseFile(Path.of(allOnesSingleEntry.toURI()));
+
+        application.showsAccountNumber("123456789\n");
+    }
 }
