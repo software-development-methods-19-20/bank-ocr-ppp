@@ -68,7 +68,7 @@ public class Cell {
         for(int i = 0; i<10; ++i){
             if(NUM_CELL[i].equals(cellAsText)) return Integer.toString(i);
         }
-        return null;
+        return "?";
     }
 
 }

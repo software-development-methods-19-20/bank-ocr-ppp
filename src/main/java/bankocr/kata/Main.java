@@ -9,6 +9,7 @@ public class Main {
         EntryReader parser = new EntryReader(Path.of(args[0]));
         ArrayList<Entry> entry = parser.newReadEntry();
         AccountNumber accountNumber = new AccountNumber(entry);
-        System.out.println(accountNumber.toString());
+        String out = accountNumber.toString()+(accountNumber.toString().contains("?")?" ILL":"");
+        System.out.println(out);
     }
 }

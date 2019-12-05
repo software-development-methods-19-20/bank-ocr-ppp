@@ -44,7 +44,7 @@ public class BankOcrAcceptanceTest {
         ApplicationRunner application = new ApplicationRunner();
         application.parseFile(Path.of(allNumsMultipleEntry.toURI()));
 
-        application.showsAccountNumber("200800000\n999999999\n490867715\n");
+        application.showsAccountNumber("200800000\n999999999\n49086771? ILL\n");
 
     }
 }
