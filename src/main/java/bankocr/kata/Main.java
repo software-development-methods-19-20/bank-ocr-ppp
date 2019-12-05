@@ -1,7 +1,9 @@
 package bankocr.kata;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Main {
@@ -11,5 +13,6 @@ public class Main {
         AccountNumber accountNumber = new AccountNumber(entry);
         String out = accountNumber.toString()+(accountNumber.toString().contains("?")?" ILL":"");
         System.out.println(out);
+        Files.write(Paths.get(args[0]+".txt"),out.getBytes());
     }
 }
