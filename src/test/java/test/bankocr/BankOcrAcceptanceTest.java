@@ -29,11 +29,22 @@ public class BankOcrAcceptanceTest {
 
     @Test
     public void parseFileWithAllNumsEntryAndShowActualAccountNumerOnConsole() throws Exception {
-        URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOneToNineDigitEntry");
+        URL allNumsSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOneToNineDigitEntry");
         ApplicationRunner application = new ApplicationRunner();
 
-        application.parseFile(Path.of(allOnesSingleEntry.toURI()));
+        application.parseFile(Path.of(allNumsSingleEntry.toURI()));
 
         application.showsAccountNumber("123456789\n");
+    }
+
+
+    @Test
+    public void parseFileWithmultipleNumbers() throws Exception{
+        URL allNumsMultipleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("multipleEntries");
+        ApplicationRunner application = new ApplicationRunner();
+        application.parseFile(Path.of(allNumsMultipleEntry.toURI()));
+
+        application.showsAccountNumber("200800000\n999999999\n490867715\n");
+
     }
 }

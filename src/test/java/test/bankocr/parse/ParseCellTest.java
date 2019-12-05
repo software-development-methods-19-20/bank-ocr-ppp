@@ -27,3 +27,4 @@ public class ParseCellTest {
         assertThat(new Cell(zeroAsText).toString(), is(equalTo("1")));
     }
 }
+

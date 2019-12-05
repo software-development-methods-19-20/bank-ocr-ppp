@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.ArrayList;
 
 public class EntryReader {
 
@@ -15,7 +16,24 @@ public class EntryReader {
         bufferedReader = new BufferedReader(fileReader);
     }
 
-    public Entry newReadEntry() throws IOException {
-        return new Entry(bufferedReader.readLine(), bufferedReader.readLine(), bufferedReader.readLine());
+    public ArrayList<Entry> newReadEntry() throws IOException {
+        ArrayList<Entry>  ent = new ArrayList<>();
+        String[] temp = new String[3];
+        int i = 0;
+        while(true){
+            String newline = bufferedReader.readLine();
+            if(newline==null){break;}
+            else if (newline.isEmpty() && i==3){
+                i=0;
+                continue;}
+            else{
+                temp[i]=newline;
+                i=i+1;
+            }
+        if(i==3){
+            ent.add(new Entry(temp[0],temp[1],temp[2]));}
+        }
+
+        return ent;
     }
 }

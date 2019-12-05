@@ -21,6 +21,7 @@ public class ApplicationRunner {
     }
 
     public void parseFile(Path filePath) throws IOException {
+
         Main.main(filePath.toString());
     }
 
