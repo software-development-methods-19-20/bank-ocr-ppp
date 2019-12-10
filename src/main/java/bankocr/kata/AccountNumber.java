@@ -21,11 +21,6 @@ public class AccountNumber {
     }
 
     public boolean getChecksums() {
-        for (Entry e : entry) {
-            if (!e.getChecksum()) {
-                return false;
-            }
-        }
-        return true;
+        return ChecksumCalculator.calculateChecksums(entry);
     }
 }
