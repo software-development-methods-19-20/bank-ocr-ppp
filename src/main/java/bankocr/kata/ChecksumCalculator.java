@@ -17,14 +17,14 @@ public class ChecksumCalculator {
     private static boolean singleChecksum(List<Cell> cells) {
         int checksum = 0;
         String currCell;
-        for (int i=0; i < cells.size(); ++i) {
+        for (int i = 0; i < cells.size(); ++i) {
             currCell = cells.get(i).toString();
             if (!currCell.equals("?")) {
                 checksum += Integer.parseInt(currCell) * (i + 1);
-            }
-            else {
+            } else {
                 return true;
             }
         }
         return checksum % 11 == 0;
+    }
 }
