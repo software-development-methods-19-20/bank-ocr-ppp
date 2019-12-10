@@ -1,5 +1,8 @@
 package bankocr.kata;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Cell {
 
     private static final String ZERO =
@@ -68,5 +71,9 @@ public class Cell {
             }
         }
         return "?";
+    }
+
+    public ArrayList<String> getNeighbors() {
+        return charCorrector.computeNeighbors(cellAsText, NUM_CELL);
     }
 }
