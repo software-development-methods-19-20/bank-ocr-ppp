@@ -17,23 +17,26 @@ public class EntryReader {
     }
 
     public ArrayList<Entry> newReadEntry() throws IOException {
-        ArrayList<Entry>  ent = new ArrayList<>();
+        ArrayList<Entry> ent = new ArrayList<>();
         String[] temp = new String[3];
         int i = 0;
-        while(true){
+        while (true) {
             String newline = bufferedReader.readLine();
-            if(newline==null){break;}
-            else if (newline.isEmpty() && i==3){
-                i=0;
-                continue;}
-            else{
-                temp[i]=newline;
-                i=i+1;
+            if (newline == null) {
+                break;
             }
-        if(i==3){
-            ent.add(new Entry(temp[0],temp[1],temp[2]));}
+            else if (newline.isEmpty() && i==3) {
+                i=0;
+                continue;
+            }
+            else {
+                temp[i] = newline;
+                i = i + 1;
+            }
+            if (i==3) {
+                ent.add(new Entry(temp[0],temp[1],temp[2]));
+            }
         }
-
         return ent;
     }
 }

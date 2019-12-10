@@ -11,8 +11,14 @@ public class Main {
         EntryReader parser = new EntryReader(Path.of(args[0]));
         ArrayList<Entry> entry = parser.newReadEntry();
         AccountNumber accountNumber = new AccountNumber(entry);
-        String out = accountNumber.toString()+(accountNumber.toString().contains("?")?" ILL":"");
+        String out = accountNumber.toString();
         System.out.println(out);
-        Files.write(Paths.get(args[0]+".txt"),out.getBytes());
+        if (out.contains("?")) {
+            out += " ILL";
+        }
+        else if (!accountNumber.getChecksums()) {
+            out += " ERR";
+        }
+        Files.write(Paths.get(args[0] + ".txt"), out.getBytes());
     }
 }

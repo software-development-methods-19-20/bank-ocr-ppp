@@ -25,4 +25,11 @@ public class PrintAccountNumberTest {
         entry.add(new Entry("                           ", "  |  |  |  |  |  |  |  |  |", "  |  |  |  |  |  |  |  |  |"));
         assertThat(new AccountNumber(entry).toString(), is(equalTo("111111111")));
     }
+
+    @Test
+    void allTwosEntry() {
+        ArrayList<Entry> entry = new ArrayList<>();
+        entry.add(new Entry("                           ", "  |  |  |  |  |  |  |  |  |", "  |  |  |  |  |  |  |  |  |"));
+        assertThat(new AccountNumber(entry).toString(), is(equalTo("222222222")));
+    }
 }

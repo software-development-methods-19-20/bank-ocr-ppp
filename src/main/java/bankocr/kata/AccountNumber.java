@@ -19,4 +19,13 @@ public class AccountNumber {
         temp = temp.substring(0,temp.length()-1);
         return temp;
     }
+
+    public boolean getChecksums() {
+        for (Entry e : entry) {
+            if (!e.getChecksum()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
